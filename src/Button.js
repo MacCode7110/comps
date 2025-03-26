@@ -1,7 +1,7 @@
 // Wrapper component
-function Button() {
+function Button({ children }) {
     // Underlying element
-    return <button>Hi there!</button>;
+    return <button>{children}</button>;
 }
 
 export default Button;

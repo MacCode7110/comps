@@ -3,19 +3,19 @@ import Button from './Button';
 function App() {
     return <div>
         <div>
-            <Button></Button>
+            <Button>Click me!</Button>
         </div>
         <div>
-            <Button></Button>
+            <Button>Buy now!</Button>
         </div>
         <div>
-            <Button></Button>
+            <Button>See ads!</Button>
         </div>
         <div>
-            <Button></Button>
+            <Button>Sell now!</Button>
         </div>
         <div>
-            <Button></Button>
+            <Button>See consumers!</Button>
         </div>
     </div>;
 }
