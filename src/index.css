@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+button > svg {
+    /*Whenever there is a button element that has an immediate child svg element inside of it, apply the following CSS rule to the svg.*/
+    margin-right: 5px;
+}
