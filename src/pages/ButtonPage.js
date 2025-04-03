@@ -1,7 +1,7 @@
-import Button from './components/Button';
+import Button from '../components/Button';
 import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
 
-function App() {
+function ButtonPage() {
     return <div>
         <div>
             <Button success outline rounded className="mb-5">
@@ -32,4 +32,4 @@ function App() {
     </div>;
 }
 
-export default App;
+export default ButtonPage;
