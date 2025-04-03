@@ -12,7 +12,8 @@ function Button({
     danger,
     outline,
     rounded,
-    onClick
+    // Obtain the remaining properties and assign them to the variable rest:
+    ...rest
 }) {
     // Logic that COULD be used to determine the className string for styling the button element:
     // let baseClassName = "px-3 py-1.5 border"
@@ -47,7 +48,7 @@ function Button({
         })
       );
     // Underlying element
-    return <button onClick={onClick} className={classes}>{children}</button>;
+    return <button {...rest} onClick={onClick} className={classes}>{children}</button>;
 }
 
 Button.propTypes = {
