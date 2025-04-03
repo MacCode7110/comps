@@ -4,7 +4,7 @@ import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
 function App() {
     return <div>
         <div>
-            <Button success outline rounded>
+            <Button success outline rounded className="mb-5">
                 <GoBell className="mr-1"/>
                     Click me!
             </Button>
