@@ -13,7 +13,7 @@ function Accordion({ items }) {
         // Conditional rendering using the isExpanded field
         return (
             <div key={item.id}>
-                <div>{item.label}</div>
+                <div onClick={() => setExpandedIndex(index)}>{item.label}</div>
                 {isExpanded && <div>{item.content}</div>}
             </div>
         );
