@@ -8,6 +8,17 @@ function Accordion({ items }) {
     // This handleClick event handler is called manually because it is receiving an index as the first argument instead of an event object as the first argument.
     // Typically, the handleClick event handler receives an event object as the first argument. In this case, handleClick is not called manually.
     const handleClick = (nextIndex) => {
+        console.log('STALE version of expandedIndex');
+
+        setExpandedIndex((currentExpandedIndex) => {
+            console.log('UP TO DATE version of expandedIndex');
+            if (currentExpandedIndex === nextIndex) {
+                return -1;
+            } else {
+                return nextIndex;
+            }
+        });
+        
         if (expandedIndex === nextIndex) {
             setExpandedIndex(-1);
         } else {
