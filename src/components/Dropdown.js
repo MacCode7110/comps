@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { GoChevronDown } from "react-icons/go";
 
 function Dropdown({ options, value, onChange }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ function Dropdown({ options, value, onChange }) {
     }
 
     const renderedOptions = options.map((option) => {
-        return <div onClick={() => handleOptionClick(option)} key={option.value}>
+        return <div className="hover:bg-sky-100 rounded cursor-pointer p-1" onClick={() => handleOptionClick(option)} key={option.value}>
             {option.label}
         </div>;
     });
@@ -34,9 +35,11 @@ function Dropdown({ options, value, onChange }) {
 
     // If selection is null, then it is not defined; the question mark will evaluate the selection to undefined. The boolean coercion (the OR logical operator triggers the boolean coercion) of undefined evalutes to falsy, and so the first truthy boolean coercion value ('Select...') is returned.
     // If the selection is not null, then it is defined; the question mark will evaluate the selection to the object, and the object is used to access the value of the label property. Boolean coercion evaluates the defined value of the label property to truthy, and the first truthy value (selection.label) is returned.
-    <div>
-        <div onClick={handleClick}>{value?.label || 'Select...'}</div>
-        {isOpen && <div>{renderedOptions}</div>}
+    <div className="w-48 relative">
+        <div className="flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-white w-full" onClick={handleClick}>{value?.label || 'Select...'}
+        <GoChevronDown className="text-lg" />
+        </div>
+        {isOpen && <div className="absolute top-full border rounded p-3 shadow bg-white w-full">{renderedOptions}</div>}
         </div>
     );
 }
