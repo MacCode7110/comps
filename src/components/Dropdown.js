@@ -10,7 +10,11 @@ function Dropdown({ options, value, onChange }) {
         setIsOpen(!isOpen);
     };
 
+    // Time at which component rerenders
+    window.timeTwo = performance.now();
     const handleOptionClick = (option) => {
+        // Time at which custom handleClick is executed
+        window.timeOne = performance.now();
         // Close dropdown
         setIsOpen(false);
         // What option did the user click on?
